@@ -1,0 +1,205 @@
+{% load static %}
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FUTO  ALUMNI PH CHAPTER</title>
+
+    <link rel="stylesheet" type="text/css" href={% static "css/syntax.css" %}>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+      <nav> 
+
+          <div class="banner header">
+
+            <img src={% static "./futo.jpg" %} alt="futo logo" />
+
+          </div>        
+
+      </nav>
+
+      <section>
+
+            <div class="futo-li">
+
+                <p id="txt">
+
+                    This initiative is targeted at FUTO Alumnus resident in Rivers State
+
+                </p>
+
+                <ul>
+
+                    <li>
+
+                        Publicize the alumni network, and beyond (where applicable)
+
+                    </li>
+
+                    <li class="l2">
+
+                        Bridge the information and data gap between FUTOitess and FUTOites businesses
+
+                    </li>
+
+                    <li>
+
+                        Enable match making of FUTOites businesses amongst other things.
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+            <div id="contactus">
+
+                <h1>Please fill out this form</h1>
+
+                
+
+                <div class="contact-form info">
+
+                    <form action="{% url 'alumni:register' %}" method="post" autocomplete="on" class="contacts-info" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="sname">* FIRSTNAME:</label>
+                            <input required type="text" class="error success" name="firstname" placeholder="John" />
+                            <small></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sname">* SURNAME:</label>
+                            <input required type="text" class="error success" name="surname" placeholder="deo" />
+                            <small></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="onames">* OTHER NAMES:</label>
+                            <input required type="text" class="error success" name="othernames" placeholder="Johnson Wills" />
+                            <small></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">* PHONE NUMBER:</label>
+                            <input required type="tel" class="error success" name="phone_number" placeholder="+2348012345678" />
+                            <small></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">* EMAIL:</label>
+                            <input required type="email" class="error success" name="email" placeholder="yourmail@email.com" />
+                            <small></small>
+                        </div>
+
+                        
+
+                        <div class="form-group">
+                            <label for="year">* YEAR OF GRADUATION:</label>
+                            <input required type="month" class="error success" name="year_of_graduation"8 placeholder="2022"/>
+                            <small></small>
+                        </div>
+
+                        
+
+                        <div class="form-group">
+                            <label for="disc">* DISCIPLINE:</label>
+                            <input required type="text" class="error success" name="discipline" placeholder="Engineering" />
+                            <small></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pspt">* UPLOAD PASSPORT:</label>
+                            <input required type="file" class="error success" name="passport" />
+                            <small></small>
+                        </div>
+
+
+                        <span class="form-group subscribe">
+                            <input type="checkbox" name="subscribed" id="subN">
+                            <span class="sub2">
+                                Subscribe to the futoites business directory?
+
+                            </span>
+
+                        </span>
+                        <div class="hide">
+                            <p class="" >
+
+                                Kindly respond to this section if you wish to subscribe to the
+
+                                <strong>FUTO Alumni PH Chapter Business Directory.</strong>
+
+                            </p>
+
+                            <div class="form-group " >
+                                <label for="company">* BUSINESS/COMPANY NAME:</label>
+                                <input type="text" class="success" name="company_name" placeholder="e.g ABC&D ltd"/>
+                                <small></small>
+                            </div>
+
+                            
+
+                            <div class="form-group " >
+                                <label for="com_overview">* NATURE OF BUSINESS/ SERVICES (A BRIEF OVERVIEW)</label>
+                                <textarea class="success" name="nature_of_biz" placeholder="Hi! pls tell us a little about your business"></textarea>
+                                <small></small>
+                            </div>
+
+                        
+
+                            <div class="form-group " data-toggle-value="">
+                                <label for="pics">* UPLOAD PICTURE OF BUSINESS:</label>
+                                <input type="file" class="success" name="bussines_photo" />
+                                <small></small>
+                            </div>
+                        </div>
+
+
+
+                        <div class="form-group">
+
+                            <button type="submit" >
+
+                                <span>Click to submit</span>
+
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+                
+
+            </div>
+
+      </section>
+
+    </div>
+
+  
+    <script src={% static "./js/jQueryLibraryForJS.js" %}></script>
+
+    <script src={% static  "https://cdnjs.cloudflare.com/ajax/libs/dompurify/0.8.2/purify.min.js" %}></script>
+
+    <script src={% static  "./js/futo.js" %}></script>
+
+
+</body>
+
+</html>
